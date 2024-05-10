@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Nunito Sans", sans-serif;
+  }
+
+  .border1 {
+    border: 1px solid blue;
+  }
+
+  .border2 {
+    border: 1px solid red;
+  }
+}

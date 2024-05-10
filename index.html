@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playball&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playball&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Ionic Icon -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Alpine JS -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>Erni | Sibarani</title>
+  </head>
+  <body class="bg-white">
+    <!-- NAVBAR SECTION -->
+    <nav
+      class="sticky top-0 bg-white border-b-[1px] backdrop-blur-sm bg-white/50 z-[999]"
+    >
+      <div class="py-5 flex justify-between items-center px-4 md:px-8">
+        <a href="#" class="hover:text-pink">
+          <img
+            src="./assets/img/profile.jpeg"
+            alt="avatar-pict"
+            class="rounded-full w-[36px] h-[36px]"
+          />
+        </a>
+        <div class="relative" x-data="{open: false}">
+          <div
+            x-on:click="open = ! open"
+            @click.outside="open = false"
+            class="p-3 md:hidden"
+          >
+            <ion-icon
+              name="menu-outline"
+              class="text-2xl hover:cursor-pointer"
+            ></ion-icon>
+          </div>
+
+          <div class="hidden md:flex md:gap-4 md:items-center">
+            <a href="#" class="hover:text-pink">Home</a>
+            <a href="#aboutme" class="hover:text-pink">About Me</a>
+            <a href="#experiences" class="hover:text-pink">Experiences</a>
+            <a href="#achievement" class="hover:text-pink">Achievement</a>
+            <a href="#contact" class="hover:text-pink">Contact</a>
+          </div>
+
+          <div
+            class="border-[1px] flex flex-col p-4 absolute right-0 bg-white rounded gap-2"
+            x-show="open"
+            x-transition
+          >
+            <a href="#" class="hover:text-pink">Home</a>
+            <a href="#aboutme" class="hover:text-pink">About Me</a>
+            <a href="#experiences" class="hover:text-pink">Experiences</a>
+            <a href="#achievement" class="hover:text-pink">Achievement</a>
+            <a href="#contact" class="hover:text-pink">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section id="hero">
+        <div class="px-4 py-8 md:py-[54px] md:flex md:px-8">
+          <div
+            class="md:order-2 md:flex-1 flex items-center justify-center md:justify-end"
+          >
+            <img src="https://placehold.co/240x280" alt="profile-pict" />
+          </div>
+          <div class="md:order-1 md:flex-1">
+            <div class="my-5">
+              <h3
+                class="text-pink font-playball text-[24px] md:text-[32px] md:font-semibold"
+              >
+                Hello, I'm Erni Sibarani 👋
+              </h3>
+              <h3 class="text-xl font-bold md:text-2xl">
+                Business Development Representative
+              </h3>
+            </div>
+
+            <p class="md:text-[18px]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Recusandae quos, adipisci, eius excepturi earum ipsam tenetur
+              eaque a culpa iure deserunt esse, ipsum tempore libero officiis.
+              Velit illum ut sapiente.
+            </p>
+
+            <span class="flex gap-2 items-center my-5">
+              <ion-icon
+                name="location"
+                class="text-emerald-500 font-bold text-2xl"
+              ></ion-icon>
+              <p class="md:text-[18px]">Jakarta, Indonesia</p>
+            </span>
+
+            <div class="flex gap-3">
+              <a
+                download
+                href="./assets/doc/resume.pdf"
+                class="bg-pink px-3 py-2 rounded text-white font-bold border-2 border-pink hover:text-pink hover:bg-white"
+              >
+                <div class="flex gap-3 items-center">
+                  <ion-icon name="arrow-down-outline"></ion-icon>
+                  <span>Resume</span>
+                </div>
+              </a>
+
+              <a
+                href="https://id.linkedin.com/in/erni-sibarani-a3b541166"
+                class="bg-white px-3 py-2 rounded text-biru border-2 border-biru font-bold hover:text-white hover:bg-biru"
+              >
+                <div class="flex gap-3 items-center">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                  <span>Linkedin</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- <button class="bg-pink text-white text-[16px] px-3 py-2 rounded-xl">
+          <ion-icon name="arrow-down-outline"></ion-icon>
+        </button> -->
+        </div>
+      </section>
+
+      <!-- ABOUTME SECTION -->
+      <section id="aboutme" class="pt-20">
+        <div class="px-4 py-8 bg-light-gray50 md:py-[54px] md:px-8">
+          <h1
+            class="text-pink text-xl font-bold mb-6 md:mb-[40px] md:text-center md:text-2xl"
+          >
+            About&nbsp;<span class="text-black">Me</span>
+          </h1>
+
+          <div
+            class="flex flex-col gap-3 md:flex-row md:max-w-[1024px] md:mx-auto md:items-center md:gap-16"
+          >
+            <img
+              src="./assets/img/about.svg"
+              alt="aboutme"
+              class="w-[340px] h-[340px] hidden md:block"
+            />
+
+            <div class="">
+              <p class="md:text-[18px] md:mb-4">
+                <img
+                  src="./assets/img/about.svg"
+                  alt="Pineapple"
+                  class="float-left w-[180px] h-[180px] mr-5 md:hidden"
+                />
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi,
+                est nobis ex fugit id, ratione veritatis culpa, minus earum
+                doloremque dicta! Laborum libero amet cum earum voluptas minus,
+                repellendus ducimus?
+              </p>
+              <p class="md:text-[18px]">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Praesentium enim perspiciatis eveniet at asperiores, ipsa minima
+                dolorum optio blanditiis, quod accusamus quisquam, expedita
+                porro sunt amet ipsum quae inventore explicabo. Necessitatibus
+                accusamus harum pariatur distinctio. Pariatur, aperiam officia
+                similique in voluptatem optio corporis magni sequi doloremque
+                obcaecati distinctio odit qui?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK EXPERIENCES SECTION -->
+      <section id="experiences" class="pt-20">
+        <div class="px-4 py-8 md:py-[54px] md:px-8">
+          <h1
+            class="text-pink text-xl font-bold mb-6 md:mb-[40px] md:text-center md:text-2xl"
+          >
+            Work&nbsp;<span class="text-black">Experiences</span>
+          </h1>
+
+          <div
+            x-data="{
+          works: [
+            {
+              company: 'PT. Mid Solusi Nusantara (Mekari)', 
+              role: 'Business Development Representative', 
+              duration: '2000 - 20001',
+              img_src:'./assets/img/mekari.png'
+            },
+            {
+              company: 'PT. Tataskola Teknologi Indonesia', 
+              role: 'Marketing Staff', 
+              duration: '2000 - 20001',
+              img_src:'./assets/img/tataskola.jpg'
+            },
+            {
+              company: 'PT. Pinduit Teknologi Indonesia', 
+              role: 'Marketing Staff', 
+              duration: '2000 - 20001',
+              img_src:'./assets/img/pintek2.jpeg'
+            },
+            {
+              company: 'PT. Bank OCBC Indonesia', 
+              role: 'Marketing Staff', 
+              duration: '2000 - 20001',
+              img_src:'./assets/img/ocbc3.jpg'
+            },
+            {
+              company: 'PT. Mega Corpora ', 
+              role: 'Credit Loan Officer', 
+              duration: '2000 - 20001',
+              img_src:'./assets/img/mega.svg'
+            },
+          ]
+        }"
+            class="flex flex-col gap-2 md:flex-row md:flex-wrap md:justify-center md:gap-[20px]"
+          >
+            <template x-for="(data, idx) in works">
+              <div
+                class="flex items-start gap-3 border-[1px] p-2 rounded shadow-lg bg-white md:block md:w-[25%] md:p-4"
+              >
+                <div
+                  class="w-[60px] h-[60px] border-[1px] rounded overflow-hidden p-2 md:mx-auto md:w-[150px] md:h-[160px] md:mb-[20px]"
+                >
+                  <img
+                    alt="card-pict"
+                    x-bind:src="data.img_src"
+                    class="w-[100%] h-[100%]"
+                  />
+                </div>
+                <div class="text-left md:text-center">
+                  <h3 x-text="data.company" class="text-base font-bold"></h3>
+                  <h4 x-text="data.role" class="text-pink text-sm"></h4>
+                  <p x-text="data.duration" class="text-sm">2000 - 20001</p>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENT SECTION -->
+      <section id="achievement" class="pt-20">
+        <div class="px-4 py-8 md:py-[54px] md:px-8 bg-light-gray50">
+          <h1
+            class="text-pink text-xl font-bold mb-6 md:mb-[40px] md:text-center md:text-2xl"
+          >
+            Work&nbsp;<span class="text-black">Achievement</span>
+          </h1>
+          <!-- <ion-icon name="trophy"></ion-icon> -->
+
+          <div
+            class="md:flex md:justify-between items-center md:max-w-[1024px] md:mx-auto"
+          >
+            <div
+              class="mb-4 md:order-2 md:flex-[1.2] flex justify-center md:justify-end"
+            >
+              <img
+                src="./assets/img/achievement.svg"
+                alt="achievement"
+                class="w-[200px] h-[200px] md:w-[340px] md:h-[340px]"
+              />
+            </div>
+            <div
+              class="flex flex-col gap-2 md:order-1 md:flex-1"
+              x-data="{
+              list: [
+                {
+                  title: 'Lorem ipsum dolor sit amet.', 
+                  desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, illo sapiente quam enim optio dolorum.', 
+                  txtColor: 'text-green-500',
+                  bgColor: 'bg-green-500'
+                },
+                {
+                  title: 'Lorem ipsum dolor sit amet.', 
+                  desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, illo sapiente quam enim optio dolorum.', 
+                  txtColor: 'text-yellow-500',
+                  bgColor: 'bg-yellow-500'
+                },
+                {
+                  title: 'Lorem ipsum dolor sit amet.', 
+                  desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, illo sapiente quam enim optio dolorum.', 
+                  txtColor: 'text-orange-500',
+                  bgColor: 'bg-orange-500'
+                },
+                {
+                  title: 'Lorem ipsum dolor sit amet.', 
+                  desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, illo sapiente quam enim optio dolorum.', 
+                  txtColor: 'text-sky-500',
+                  bgColor: 'bg-sky-500'
+                },
+
+              ],
+              title: 'Hallo'
+            }"
+            >
+              <template x-for="(data, idx) in list">
+                <div class="flex gap-5 border-0 p-2 rounded">
+                  <div
+                    :class="'w-[48px] h-[48px] flex-shrink-0 rounded flex justify-center items-center text-white font-bold ' + data.bgColor "
+                    x-text="idx+1"
+                  ></div>
+
+                  <div class="flex-shrink-1">
+                    <h4
+                      x-text="data.title"
+                      :class="'text-base font-bold ' + data.txtColor"
+                    ></h4>
+                    <p x-text="data.desc"></p>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="pt-20">
+        <div class="px-4 py-8 md:py-[54px] md:px-8">
+          <h1
+            class="text-pink text-xl font-bold mb-8 md:mb-[40px] md:text-center md:text-2xl"
+          >
+            Contact&nbsp;<span class="text-black">Info</span>
+          </h1>
+
+          <div
+            class="flex flex-col gap md:flex-row md:max-w-[1024px] md:mx-auto md:items-center md:justify-center"
+          >
+            <div class="">
+              <img
+                src="./assets/img/phone.svg"
+                alt="achievement"
+                class="w-[200px] h-[200px] md:w-[340px] md:h-[340px] mx-auto"
+              />
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a
+                href="https://wa.me/6282162633801"
+                class="border-2 flex gap-2 items-center p-2 rounded-md justify-between group hover:border-pink"
+              >
+                <ion-icon
+                  name="logo-whatsapp"
+                  class="text-emerald-500 font-bold text-2xl"
+                ></ion-icon>
+                <p class="font-bold group-hover:text-pink">+62821 6263 3801</p>
+              </a>
+
+              <a
+                href="mailto:ernisibarani2810@gmail.com"
+                class="border-2 flex gap-2 items-center p-2 rounded-md justify-between group hover:border-pink"
+              >
+                <ion-icon
+                  name="mail"
+                  class="text-yellow-500 font-bold text-2xl"
+                ></ion-icon>
+                <p class="font-bold group-hover:text-pink">
+                  ernisibarani2810@gmail.com
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div
+        class="mx-auto flex items-center justify-center bg-light-gray50 py-5"
+      >
+        <p class="font-playball">
+          Erni Sibarani &copy; <span id="year"></span>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+  </body>
+</html>
